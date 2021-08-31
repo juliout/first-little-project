@@ -1,34 +1,107 @@
+body{
+    background-image: url(../src/components/image/fundo.jpg);
+    background-size: 100%;
+    display: flex;
+
+}
 .pai{
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
     display: flex;
 }
-.form{
-    background-color: rgb(37, 37, 37);
-    width: 25vw;
-    height: 50%;
-    margin: auto;
-    padding: 2%;
-    font-size: 20px;
-    color: white;
-    border-radius: 2%;
+.main{
+    
+    width: 70vw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    
 }
-.Mlargura{
-    display: block;
+
+.divPai{
+    width: 20%;
+    height: 16%;    
+    box-sizing: border-box;
+    display: flex;    
+    word-break: break-all;
+    margin: 2%;
+    
+    
+}
+.imgCx{
     width: 100%;
-    margin-bottom: 10px ;
+    height: 100%;
+    border-radius: 20px;
+    word-break: break-all;
 }
-.Plargura{
-    display: block;
-    width: 70%;
-    margin-bottom: 10px ;
-}
-.buttons {
+.caixaUl{
+    background-color: rgba(255, 255, 255, 0.171);
+    margin-left: -100%;
+    width: 100%;
+    opacity: 0;
+    box-sizing: border-box;
+    
+    border: chartreuse 10px double;
+    
+    border-radius: 20px;
+    
+
     display: flex;
-    margin: 0 auto;
-    justify-content: center;    
+    justify-items: center;
 }
-.buttons button{
-    margin-top: 10px;
+.caixaUl:hover{
+    cursor: grab;
+    opacity: 1;
+}
+.caixaUl:hover > .ul{
+    background-color: rgba(255, 255, 255, 0.507);
+    border-radius: 20px;
+}
+
+
+.caixaUl ul{
+    margin: 60% auto 0;
+    font-family: 'Besley', serif;
+    padding: 5px;
+    
+    
+}
+.caixaUl li{
+    font-size: 15px;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.caixaUl h1{
+    color:black;
+    text-shadow: 0px 0px 2px rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.live{
+    color:green;
+    text-shadow: 0px 0px 2px rgb(1, 255, 64);
+}
+.death{
+    color: red;
+}
+
+
+.aside{
+    width: 30vw;
+    display: flex;
+
+
+}
+.logo{
+    width: 25%;
+    height: 42%;
+    position: fixed;
+    margin: 17% auto;
+}
+.logo:hover{
+
+    width: 26%;
+    height: 43%;
+    opacity: 0.8;
 }

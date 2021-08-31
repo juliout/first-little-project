@@ -1,28 +1,45 @@
-import Inputs from "./components/inputs";
 import './app.css'
+import React, { useState, useEffect} from 'react';
+import logo from './components/image/logo.png'
+
 
 export default function App() {
-  return (
-    <div className="pai">      
-        <form className="form">
-          <Inputs type="text" className="input is-primary is-medium Mlargura" name="nome" id="iNome">
-            Nome Completo:
-          </Inputs>
-          <Inputs type="email" className="input is-primary is-medium Mlargura" name="email" id="iemail"> 
-            Email:
-          </Inputs>
-          <Inputs type="password" className="input is-primary is-medium Plargura" name="senha" id="isenha">
-            Senha:
-          </Inputs>
-          <Inputs  type="password" className="input is-primary is-medium Plargura" name="resenha" id="iresenha">
-            Re-senha:
-          </Inputs>
-          <div className="buttons">
-            <button className="button is-primary is-large">Enviar</button>
-            <button className="button is-danger">Limpar</button>
-          </div>
 
-        </form>      
+  const [personagens, setPersonagens] = useState([])
+
+  useEffect(()=>{
+    function loadPersonagens(){
+      let url = 'https://rickandmortyapi.com/api/character?page=1'
+      fetch(url).then((r)=> r.json()).then((resultado)=>{setPersonagens(resultado.results)})
+    }
+    loadPersonagens()
+  },[])
+
+
+  return (
+    <div className="pai">
+    <main className="main">
+      {personagens.map((p)=> {
+        return(
+            <div className="divPai" key={p.id}>
+              <img src={p.image} alt={p.name} title={p.name} className="imgCx"/>
+              
+              <div className="caixaUl">
+                <ul className="ul">
+                  <li><h1>{p.name}</h1></li>
+                  <li className="live">{p.status}</li>
+                  <li>specie: {p.species}</li>
+                  <li>gender: {p.gender}</li>
+                </ul>
+              </div>
+
+            </div>          
+        )
+      })}
+    </main>
+    <aside className="aside">
+      <img src={logo} alt="" className="logo"/>
+    </aside>
     </div>
   );
   }
